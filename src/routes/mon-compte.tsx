@@ -109,7 +109,10 @@ function AccountPage() {
                   />
                 </div>
               </div>
+            )}
+
             {mode === "register" && (
+
               <div>
                 <label htmlFor="phone" className="mb-1 block text-sm font-medium text-foreground">
                   Numéro de téléphone
