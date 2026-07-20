@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Eye, EyeOff, Lock, Mail, ArrowRight, User, Shield, Phone } from "lucide-react";
+import { Eye, EyeOff, Lock, Mail, ArrowRight, User, Shield, Phone, Gift } from "lucide-react";
 
 export const Route = createFileRoute("/mon-compte")({
   component: AccountPage,
@@ -175,6 +175,29 @@ function AccountPage() {
                 </button>
               </div>
             </div>
+
+            {mode === "register" && (
+              <div>
+                <label htmlFor="invite" className="mb-1 block text-sm font-medium text-foreground">
+                  Code d'invitation <span className="text-muted-foreground font-normal">(optionnel)</span>
+                </label>
+                <div className="relative">
+                  <Gift className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                  <input
+                    id="invite"
+                    name="invite"
+                    type="text"
+                    autoComplete="off"
+                    placeholder="Code du parrain"
+                    className="w-full rounded-md border border-input bg-background/50 py-2.5 pl-10 pr-4 text-sm uppercase tracking-wider text-foreground placeholder:text-muted-foreground placeholder:normal-case placeholder:tracking-normal focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                  />
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Saisissez le code du parrain qui vous a invité pour bénéficier d'avantages exclusifs.
+                </p>
+              </div>
+            )}
+
 
             <button
               type="submit"
