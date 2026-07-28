@@ -6,10 +6,11 @@ export const Route = createFileRoute("/")({
   component: HomePage,
   head: () => ({
     meta: [
-      { title: "Aurora Capital — Investissement intelligent" },
-      { name: "description", content: "Faites fructifier votre capital avec des stratégies d'investissement claires, performantes et adaptées à vos objectifs." },
-      { property: "og:title", content: "Aurora Capital — Investissement intelligent" },
-      { property: "og:description", content: "Faites fructifier votre capital avec des stratégies d'investissement claires, performantes et adaptées à vos objectifs." },
+      { title: "Speaker Invest — Investir dans les speakers" },
+      { name: "description", content: "Investissez dans des speakers connectés et recevez un revenu journalier stable avec Speaker Invest." },
+      { property: "og:title", content: "Speaker Invest — Investir dans les speakers" },
+      { property: "og:description", content: "Investissez dans des speakers connectés et recevez un revenu journalier stable avec Speaker Invest." },
+
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -30,7 +31,7 @@ function HomePage() {
                 <span className="text-gradient">prospérez avec confiance.</span>
               </h1>
               <p className="mt-4 text-base text-muted-foreground md:text-lg">
-                Aurora Capital conçoit des stratégies patrimoniales sur mesure alliant performance, transparence et maîtrise du risque.
+                Speaker Invest vous permet d'investir dans des speakers connectés et de percevoir un revenu journalier stable, en toute transparence.
               </p>
             </div>
             <div className="relative z-10 mt-6 flex flex-wrap gap-3">
@@ -102,7 +103,7 @@ function HomePage() {
       <section className="mx-auto w-full max-w-7xl">
         <div className="mb-10 text-center">
           <h2 className="font-display text-2xl font-bold text-foreground md:text-3xl">
-            Pourquoi choisir Aurora Capital ?
+            Pourquoi choisir Speaker Invest ?
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
             Une approche discrétionnaire rigoureuse, des outils digitaux modernes et une équipe dédiée à votre réussite patrimoniale.

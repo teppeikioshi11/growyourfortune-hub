@@ -6,10 +6,10 @@ export const Route = createFileRoute("/mon-compte")({
   component: AccountPage,
   head: () => ({
     meta: [
-      { title: "Mon compte — Aurora Capital" },
-      { name: "description", content: "Connectez-vous à votre espace client Aurora Capital pour suivre vos investissements, consulter vos rapports et gérer votre profil." },
-      { property: "og:title", content: "Mon compte — Aurora Capital" },
-      { property: "og:description", content: "Connectez-vous à votre espace client Aurora Capital pour suivre vos investissements, consulter vos rapports et gérer votre profil." },
+      { title: "Mon compte — Speaker Invest" },
+      { name: "description", content: "Connectez-vous à votre espace client Speaker Invest pour suivre vos investissements, consulter vos rapports et gérer votre profil." },
+      { property: "og:title", content: "Mon compte — Speaker Invest" },
+      { property: "og:description", content: "Connectez-vous à votre espace client Speaker Invest pour suivre vos investissements, consulter vos rapports et gérer votre profil." },
       { property: "og:url", content: "/mon-compte" },
       { name: "robots", content: "noindex" },
     ],

@@ -5,9 +5,9 @@ export const Route = createFileRoute("/vos-produits")({
   component: ProductsPage,
   head: () => ({
     meta: [
-      { title: "Vos produits — Aurora Capital" },
+      { title: "Vos produits — Speaker Invest" },
       { name: "description", content: "Découvrez nos produits d'investissement : actions, obligations, immobilier, ESG, private equity et fonds diversifiés." },
-      { property: "og:title", content: "Vos produits — Aurora Capital" },
+      { property: "og:title", content: "Vos produits — Speaker Invest" },
       { property: "og:description", content: "Découvrez nos produits d'investissement : actions, obligations, immobilier, ESG, private equity et fonds diversifiés." },
       { property: "og:url", content: "/vos-produits" },
     ],
