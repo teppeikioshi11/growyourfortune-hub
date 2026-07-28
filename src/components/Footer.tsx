@@ -23,8 +23,9 @@ export function Footer() {
               <span className="font-display text-lg font-bold tracking-tight">Speaker Invest</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              Stratégies d'investissement claires et performantes pour faire fructifier votre patrimoine.
+              Investissez dans des speakers connectés et recevez un revenu journalier stable avec Speaker Invest.
             </p>
+
           </div>
 
           {/* Navigation */}
