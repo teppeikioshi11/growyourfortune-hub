@@ -31,7 +31,7 @@ function HomePage() {
                 <span className="text-gradient">prospérez avec confiance.</span>
               </h1>
               <p className="mt-4 text-base text-muted-foreground md:text-lg">
-                Speaker Invest conçoit des stratégies patrimoniales sur mesure alliant performance, transparence et maîtrise du risque.
+                Speaker Invest vous permet d'investir dans des speakers connectés et de percevoir un revenu journalier stable, en toute transparence.
               </p>
             </div>
             <div className="relative z-10 mt-6 flex flex-wrap gap-3">
