@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Shield, TrendingUp, BarChart3, Wallet, Clock, Target } from "lucide-react";
+import { ArrowRight, Shield, TrendingUp, BarChart3, Wallet, Clock, Target, Coins, ArrowDownToLine, History, Headphones } from "lucide-react";
 import heroBento from "../assets/hero-bento.jpg";
 
 export const Route = createFileRoute("/")({
@@ -99,6 +99,16 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Quick actions */}
+      <section className="mx-auto w-full max-w-7xl">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <QuickAction icon={<Coins className="h-6 w-6" />} label="Recharger" />
+          <QuickAction icon={<ArrowDownToLine className="h-6 w-6" />} label="Retrait" />
+          <QuickAction icon={<History className="h-6 w-6" />} label="Historique" sub="des transactions" />
+          <QuickAction icon={<Headphones className="h-6 w-6" />} label="Service client" />
+        </div>
+      </section>
+
       {/* Value props */}
       <section className="mx-auto w-full max-w-7xl">
         <div className="mb-10 text-center">
@@ -167,5 +177,20 @@ function ValueCard({ icon, title, description }: { icon: React.ReactNode; title:
       <h3 className="mt-4 font-display text-lg font-semibold text-foreground">{title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
     </div>
+  );
+}
+
+function QuickAction({ icon, label, sub }: { icon: React.ReactNode; label: string; sub?: string }) {
+  return (
+    <button
+      type="button"
+      className="glass-card flex flex-col items-center justify-center gap-2 rounded-2xl p-5 text-center transition-colors hover:border-primary/40"
+    >
+      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/15 text-primary">
+        {icon}
+      </span>
+      <span className="font-display text-sm font-semibold text-foreground">{label}</span>
+      {sub && <span className="text-xs text-muted-foreground">{sub}</span>}
+    </button>
   );
 }
