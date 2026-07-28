@@ -1,15 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ArrowRight } from "lucide-react";
-import labubuAsset from "../assets/labubu.jpg.asset.json";
+import speakerStandard from "../assets/speaker-standard.webp.asset.json";
+import speakerPremium from "../assets/speaker-premium.webp.asset.json";
+import speakerSilver from "../assets/speaker-silver.jpg.asset.json";
+import speakerGold from "../assets/speaker-gold.webp.asset.json";
+import speakerDiamond from "../assets/speaker-diamond.webp.asset.json";
 
 export const Route = createFileRoute("/plans-investissement")({
   component: PlansPage,
   head: () => ({
     meta: [
       { title: "Plans d'investissement — Speaker Invest" },
-      { name: "description", content: "Découvrez nos plans d'investissement accessibles à partir de 3 500 FCFA et générez un revenu journalier stable jusqu'à 9 500 FCFA/jour." },
+      { name: "description", content: "Investissez dans nos speakers Standard, Premium, Silver, Gold ou Diamond et recevez un revenu journalier stable." },
       { property: "og:title", content: "Plans d'investissement — Speaker Invest" },
-      { property: "og:description", content: "Découvrez nos plans d'investissement accessibles à partir de 3 500 FCFA et générez un revenu journalier stable jusqu'à 9 500 FCFA/jour." },
+      { property: "og:description", content: "Investissez dans nos speakers Standard, Premium, Silver, Gold ou Diamond et recevez un revenu journalier stable." },
       { property: "og:url", content: "/plans-investissement" },
     ],
     links: [{ rel: "canonical", href: "/plans-investissement" }],
@@ -18,67 +22,62 @@ export const Route = createFileRoute("/plans-investissement")({
 
 const plans = [
   {
-    id: "labubu",
-    name: "Labubu",
-    description: "Le plan de bienvenue. Une première expérience simple et abordable pour commencer à recevoir un revenu journalier.",
+    id: "standard",
+    name: "Speaker Standard",
+    description: "Le speaker d'entrée de gamme pour démarrer votre investissement en toute simplicité.",
     invest: "3 500 FCFA",
     dailyReturn: "300 FCFA/jour",
-    image: labubuAsset.url,
+    image: speakerStandard.url,
     features: ["Investissement unique : 3 500 FCFA", "Revenu journalier : 300 FCFA", "Versement automatique quotidien", "Retrait simplifié"],
-    cta: "Choisir Labubu",
-    featured: true,
-  },
-  {
-    id: "classique",
-    name: "Classique",
-    description: "Un plan équilibré pour construire un complément de revenu régulier avec un capital modéré.",
-    invest: "5 000 FCFA",
-    dailyReturn: "450 FCFA/jour",
-    features: ["Investissement unique : 5 000 FCFA", "Revenu journalier : 450 FCFA", "Versement automatique quotidien", "Retrait simplifié"],
-    cta: "Choisir Classique",
-    featured: false,
-  },
-  {
-    id: "evolution",
-    name: "Évolution",
-    description: "Pour les investisseurs qui souhaitent accélérer leur rendement quotidien avec un capital accessible.",
-    invest: "10 000 FCFA",
-    dailyReturn: "950 FCFA/jour",
-    features: ["Investissement unique : 10 000 FCFA", "Revenu journalier : 950 FCFA", "Versement automatique quotidien", "Retrait prioritaire"],
-    cta: "Choisir Évolution",
-    featured: false,
-  },
-  {
-    id: "confort",
-    name: "Confort",
-    description: "Un revenu journalier significatif pour compléter sereinement vos revenus au quotidien.",
-    invest: "20 000 FCFA",
-    dailyReturn: "1 900 FCFA/jour",
-    features: ["Investissement unique : 20 000 FCFA", "Revenu journalier : 1 900 FCFA", "Versement automatique quotidien", "Retrait prioritaire"],
-    cta: "Choisir Confort",
+    cta: "Choisir Standard",
     featured: false,
   },
   {
     id: "premium",
-    name: "Premium",
-    description: "Le plan privilégié pour un complément de revenu journalier élevé et un suivi personnalisé.",
-    invest: "50 000 FCFA",
-    dailyReturn: "4 750 FCFA/jour",
-    features: ["Investissement unique : 50 000 FCFA", "Revenu journalier : 4 750 FCFA", "Versement automatique quotidien", "Accompagnement prioritaire"],
+    name: "Speaker Premium",
+    description: "Un speaker polyvalent qui offre un excellent rapport rendement/investissement.",
+    invest: "5 000 FCFA",
+    dailyReturn: "450 FCFA/jour",
+    image: speakerPremium.url,
+    features: ["Investissement unique : 5 000 FCFA", "Revenu journalier : 450 FCFA", "Versement automatique quotidien", "Retrait simplifié"],
     cta: "Choisir Premium",
     featured: false,
   },
   {
-    id: "excellence",
-    name: "Excellence",
-    description: "Notre plan phare pour les investisseurs exigeants qui visent un rendement journalier maximal.",
-    invest: "100 000 FCFA",
-    dailyReturn: "9 500 FCFA/jour",
-    features: ["Investissement unique : 100 000 FCFA", "Revenu journalier : 9 500 FCFA", "Versement automatique quotidien", "Accompagnement dédié"],
-    cta: "Choisir Excellence",
+    id: "silver",
+    name: "Speaker Silver",
+    description: "Un speaker performant conçu pour accélérer votre revenu journalier.",
+    invest: "10 000 FCFA",
+    dailyReturn: "950 FCFA/jour",
+    image: speakerSilver.url,
+    features: ["Investissement unique : 10 000 FCFA", "Revenu journalier : 950 FCFA", "Versement automatique quotidien", "Retrait prioritaire"],
+    cta: "Choisir Silver",
+    featured: true,
+  },
+  {
+    id: "gold",
+    name: "Speaker Gold",
+    description: "Un speaker haut de gamme pour un revenu journalier confortable et régulier.",
+    invest: "20 000 FCFA",
+    dailyReturn: "1 900 FCFA/jour",
+    image: speakerGold.url,
+    features: ["Investissement unique : 20 000 FCFA", "Revenu journalier : 1 900 FCFA", "Versement automatique quotidien", "Retrait prioritaire"],
+    cta: "Choisir Gold",
+    featured: false,
+  },
+  {
+    id: "diamond",
+    name: "Speaker Diamond",
+    description: "Notre speaker d'exception pour un rendement journalier maximal et un accompagnement dédié.",
+    invest: "50 000 FCFA",
+    dailyReturn: "4 750 FCFA/jour",
+    image: speakerDiamond.url,
+    features: ["Investissement unique : 50 000 FCFA", "Revenu journalier : 4 750 FCFA", "Versement automatique quotidien", "Accompagnement dédié"],
+    cta: "Choisir Diamond",
     featured: false,
   },
 ];
+
 
 function PlansPage() {
   return (
@@ -107,18 +106,17 @@ function PlansPage() {
                 Le plus populaire
               </span>
             )}
-            {plan.image && (
-              <div className="relative aspect-square w-full overflow-hidden bg-muted/20">
-                <img
-                  src={plan.image}
-                  alt="Labubu"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                  width={1024}
-                  height={1024}
-                />
-              </div>
-            )}
+            <div className="relative aspect-square w-full overflow-hidden bg-muted/20">
+              <img
+                src={plan.image}
+                alt={plan.name}
+                className="h-full w-full object-contain p-6"
+                loading="lazy"
+                width={1024}
+                height={1024}
+              />
+            </div>
+
             <div className="flex flex-1 flex-col p-6">
               <h2 className="font-display text-xl font-bold text-foreground">{plan.name}</h2>
               <p className="mt-2 text-sm text-muted-foreground">{plan.description}</p>
