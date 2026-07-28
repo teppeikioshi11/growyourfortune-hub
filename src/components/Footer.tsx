@@ -20,7 +20,7 @@ export function Footer() {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
                 <TrendingUp className="h-5 w-5" />
               </div>
-              <span className="font-display text-lg font-bold tracking-tight">Aurora Capital</span>
+              <span className="font-display text-lg font-bold tracking-tight">Speaker Invest</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               Stratégies d'investissement claires et performantes pour faire fructifier votre patrimoine.
@@ -85,7 +85,7 @@ export function Footer() {
 
         <div className="mt-12 border-t border-border/50 pt-8 text-center">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Aurora Capital. Tous droits réservés. Les investissements comportent des risques.
+            © {new Date().getFullYear()} Speaker Invest. Tous droits réservés. Les investissements comportent des risques.
           </p>
         </div>
       </div>

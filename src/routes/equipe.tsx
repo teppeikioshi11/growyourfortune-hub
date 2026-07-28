@@ -6,10 +6,10 @@ export const Route = createFileRoute("/equipe")({
   component: TeamPage,
   head: () => ({
     meta: [
-      { title: "Mon équipe — Aurora Capital" },
-      { name: "description", content: "Consultez votre équipe de parrainage Aurora Capital sur 3 niveaux, vos commissions et partagez votre code d'invitation." },
-      { property: "og:title", content: "Mon équipe — Aurora Capital" },
-      { property: "og:description", content: "Consultez votre équipe de parrainage Aurora Capital sur 3 niveaux et vos commissions." },
+      { title: "Mon équipe — Speaker Invest" },
+      { name: "description", content: "Consultez votre équipe de parrainage Speaker Invest sur 3 niveaux, vos commissions et partagez votre code d'invitation." },
+      { property: "og:title", content: "Mon équipe — Speaker Invest" },
+      { property: "og:description", content: "Consultez votre équipe de parrainage Speaker Invest sur 3 niveaux et vos commissions." },
       { property: "og:url", content: "/equipe" },
       { name: "robots", content: "noindex" },
     ],
@@ -67,7 +67,7 @@ function TeamPage() {
           Mon équipe
         </h1>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground">
-          Invitez vos proches à rejoindre Aurora Capital et gagnez une commission
+          Invitez vos proches à rejoindre Speaker Invest et gagnez une commission
           sur chacun de leurs investissements — sur 3 niveaux de parrainage.
         </p>
       </div>

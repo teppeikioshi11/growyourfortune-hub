@@ -20,7 +20,7 @@ export function Header() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <TrendingUp className="h-5 w-5" />
           </div>
-          <span className="font-display text-lg font-bold tracking-tight">Aurora Capital</span>
+          <span className="font-display text-lg font-bold tracking-tight">Speaker Invest</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">

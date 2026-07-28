@@ -6,9 +6,9 @@ export const Route = createFileRoute("/plans-investissement")({
   component: PlansPage,
   head: () => ({
     meta: [
-      { title: "Plans d'investissement — Aurora Capital" },
+      { title: "Plans d'investissement — Speaker Invest" },
       { name: "description", content: "Découvrez nos plans d'investissement accessibles à partir de 3 500 FCFA et générez un revenu journalier stable jusqu'à 9 500 FCFA/jour." },
-      { property: "og:title", content: "Plans d'investissement — Aurora Capital" },
+      { property: "og:title", content: "Plans d'investissement — Speaker Invest" },
       { property: "og:description", content: "Découvrez nos plans d'investissement accessibles à partir de 3 500 FCFA et générez un revenu journalier stable jusqu'à 9 500 FCFA/jour." },
       { property: "og:url", content: "/plans-investissement" },
     ],
