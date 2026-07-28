@@ -6,10 +6,11 @@ export const Route = createFileRoute("/")({
   component: HomePage,
   head: () => ({
     meta: [
-      { title: "Speaker Invest — Investissement intelligent" },
-      { name: "description", content: "Faites fructifier votre capital avec des stratégies d'investissement claires, performantes et adaptées à vos objectifs." },
-      { property: "og:title", content: "Speaker Invest — Investissement intelligent" },
-      { property: "og:description", content: "Faites fructifier votre capital avec des stratégies d'investissement claires, performantes et adaptées à vos objectifs." },
+      { title: "Speaker Invest — Investir dans les speakers" },
+      { name: "description", content: "Investissez dans des speakers connectés et recevez un revenu journalier stable avec Speaker Invest." },
+      { property: "og:title", content: "Speaker Invest — Investir dans les speakers" },
+      { property: "og:description", content: "Investissez dans des speakers connectés et recevez un revenu journalier stable avec Speaker Invest." },
+
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
