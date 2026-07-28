@@ -99,6 +99,16 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Quick actions */}
+      <section className="mx-auto w-full max-w-7xl">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <QuickAction icon={<Coins className="h-6 w-6" />} label="Recharger" />
+          <QuickAction icon={<ArrowDownToLine className="h-6 w-6" />} label="Retrait" />
+          <QuickAction icon={<History className="h-6 w-6" />} label="Historique" sub="des transactions" />
+          <QuickAction icon={<Headphones className="h-6 w-6" />} label="Service client" />
+        </div>
+      </section>
+
       {/* Value props */}
       <section className="mx-auto w-full max-w-7xl">
         <div className="mb-10 text-center">
