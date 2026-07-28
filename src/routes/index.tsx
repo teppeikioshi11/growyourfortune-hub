@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Shield, TrendingUp, BarChart3, Wallet, Clock, Target } from "lucide-react";
+import { ArrowRight, Shield, TrendingUp, BarChart3, Wallet, Clock, Target, Coins, ArrowDownToLine, History, Headphones } from "lucide-react";
 import heroBento from "../assets/hero-bento.jpg";
 
 export const Route = createFileRoute("/")({
