@@ -106,18 +106,17 @@ function PlansPage() {
                 Le plus populaire
               </span>
             )}
-            {plan.image && (
-              <div className="relative aspect-square w-full overflow-hidden bg-muted/20">
-                <img
-                  src={plan.image}
-                  alt="Labubu"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                  width={1024}
-                  height={1024}
-                />
-              </div>
-            )}
+            <div className="relative aspect-square w-full overflow-hidden bg-muted/20">
+              <img
+                src={plan.image}
+                alt={plan.name}
+                className="h-full w-full object-contain p-6"
+                loading="lazy"
+                width={1024}
+                height={1024}
+              />
+            </div>
+
             <div className="flex flex-1 flex-col p-6">
               <h2 className="font-display text-xl font-bold text-foreground">{plan.name}</h2>
               <p className="mt-2 text-sm text-muted-foreground">{plan.description}</p>
