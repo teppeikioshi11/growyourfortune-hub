@@ -79,15 +79,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Speaker Invest — Investissement intelligent" },
-      { name: "description", content: "Découvrez des stratégies d'investissement claires, performantes et adaptées à vos objectifs financiers." },
+      { title: "Speaker Invest — Investir dans les speakers" },
+      { name: "description", content: "Speaker Invest : la plateforme pour investir dans des speakers connectés et recevoir un revenu journalier stable." },
       { name: "author", content: "Speaker Invest" },
-      { property: "og:title", content: "Speaker Invest — Investissement intelligent" },
-      { property: "og:description", content: "Découvrez des stratégies d'investissement claires, performantes et adaptées à vos objectifs financiers." },
+      { property: "og:title", content: "Speaker Invest — Investir dans les speakers" },
+      { property: "og:description", content: "Speaker Invest : la plateforme pour investir dans des speakers connectés et recevoir un revenu journalier stable." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Speaker Invest" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@auroracapital" },
+      { name: "twitter:site", content: "@speakerinvest" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -109,8 +109,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Speaker Invest",
-          url: "https://aurora-capital.lovable.app",
-          description: "Plateforme d'investissement intelligente et accessible.",
+          url: "https://speaker-invest.lovable.app",
+          description: "Plateforme d'investissement dans les speakers connectés.",
         }),
       },
     ],
@@ -118,6 +118,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
+
   errorComponent: ErrorComponent,
 });
 
