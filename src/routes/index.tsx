@@ -102,7 +102,7 @@ function HomePage() {
       {/* Quick actions */}
       <section className="mx-auto w-full max-w-7xl">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          <QuickAction icon={<Coins className="h-6 w-6" />} label="Recharger" />
+          <QuickAction icon={<Coins className="h-6 w-6" />} label="Recharger" to="/recharger" />
           <QuickAction icon={<ArrowDownToLine className="h-6 w-6" />} label="Retrait" />
           <QuickAction icon={<History className="h-6 w-6" />} label="Historique" sub="des transactions" />
           <QuickAction icon={<Headphones className="h-6 w-6" />} label="Service client" />
@@ -180,17 +180,40 @@ function ValueCard({ icon, title, description }: { icon: React.ReactNode; title:
   );
 }
 
-function QuickAction({ icon, label, sub }: { icon: React.ReactNode; label: string; sub?: string }) {
-  return (
-    <button
-      type="button"
-      className="glass-card flex flex-col items-center justify-center gap-2 rounded-2xl p-5 text-center transition-colors hover:border-primary/40"
-    >
+function QuickAction({
+  icon,
+  label,
+  sub,
+  to,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  sub?: string;
+  to?: "/recharger";
+}) {
+  const className =
+    "glass-card flex flex-col items-center justify-center gap-2 rounded-2xl p-5 text-center transition-colors hover:border-primary/40";
+  const content = (
+    <>
       <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/15 text-primary">
         {icon}
       </span>
       <span className="font-display text-sm font-semibold text-foreground">{label}</span>
       {sub && <span className="text-xs text-muted-foreground">{sub}</span>}
+    </>
+  );
+
+  if (to) {
+    return (
+      <Link to={to} className={className}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button type="button" className={className}>
+      {content}
     </button>
   );
 }

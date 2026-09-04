@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VosProduitsRouteImport } from './routes/vos-produits'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RechargerRouteImport } from './routes/recharger'
 import { Route as PlansInvestissementRouteImport } from './routes/plans-investissement'
 import { Route as MonCompteRouteImport } from './routes/mon-compte'
 import { Route as EquipeRouteImport } from './routes/equipe'
@@ -24,6 +25,11 @@ const VosProduitsRoute = VosProduitsRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RechargerRoute = RechargerRouteImport.update({
+  id: '/recharger',
+  path: '/recharger',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlansInvestissementRoute = PlansInvestissementRouteImport.update({
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/equipe': typeof EquipeRoute
   '/mon-compte': typeof MonCompteRoute
   '/plans-investissement': typeof PlansInvestissementRoute
+  '/recharger': typeof RechargerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vos-produits': typeof VosProduitsRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/equipe': typeof EquipeRoute
   '/mon-compte': typeof MonCompteRoute
   '/plans-investissement': typeof PlansInvestissementRoute
+  '/recharger': typeof RechargerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vos-produits': typeof VosProduitsRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/equipe': typeof EquipeRoute
   '/mon-compte': typeof MonCompteRoute
   '/plans-investissement': typeof PlansInvestissementRoute
+  '/recharger': typeof RechargerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vos-produits': typeof VosProduitsRoute
 }
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/equipe'
     | '/mon-compte'
     | '/plans-investissement'
+    | '/recharger'
     | '/sitemap.xml'
     | '/vos-produits'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
     | '/equipe'
     | '/mon-compte'
     | '/plans-investissement'
+    | '/recharger'
     | '/sitemap.xml'
     | '/vos-produits'
   id:
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
     | '/equipe'
     | '/mon-compte'
     | '/plans-investissement'
+    | '/recharger'
     | '/sitemap.xml'
     | '/vos-produits'
   fileRoutesById: FileRoutesById
@@ -104,6 +116,7 @@ export interface RootRouteChildren {
   EquipeRoute: typeof EquipeRoute
   MonCompteRoute: typeof MonCompteRoute
   PlansInvestissementRoute: typeof PlansInvestissementRoute
+  RechargerRoute: typeof RechargerRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VosProduitsRoute: typeof VosProduitsRoute
 }
@@ -122,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recharger': {
+      id: '/recharger'
+      path: '/recharger'
+      fullPath: '/recharger'
+      preLoaderRoute: typeof RechargerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/plans-investissement': {
@@ -160,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   EquipeRoute: EquipeRoute,
   MonCompteRoute: MonCompteRoute,
   PlansInvestissementRoute: PlansInvestissementRoute,
+  RechargerRoute: RechargerRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   VosProduitsRoute: VosProduitsRoute,
 }
