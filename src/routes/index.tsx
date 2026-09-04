@@ -103,7 +103,7 @@ function HomePage() {
       <section className="mx-auto w-full max-w-7xl">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           <QuickAction icon={<Coins className="h-6 w-6" />} label="Recharger" to="/recharger" />
-          <QuickAction icon={<ArrowDownToLine className="h-6 w-6" />} label="Retrait" />
+          <QuickAction icon={<ArrowDownToLine className="h-6 w-6" />} label="Retrait" to="/retrait" />
           <QuickAction icon={<History className="h-6 w-6" />} label="Historique" sub="des transactions" />
           <QuickAction icon={<Headphones className="h-6 w-6" />} label="Service client" />
         </div>
@@ -189,7 +189,7 @@ function QuickAction({
   icon: React.ReactNode;
   label: string;
   sub?: string;
-  to?: "/recharger";
+  to?: "/recharger" | "/retrait";
 }) {
   const className =
     "glass-card flex flex-col items-center justify-center gap-2 rounded-2xl p-5 text-center transition-colors hover:border-primary/40";
