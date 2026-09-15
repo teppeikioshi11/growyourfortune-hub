@@ -9,140 +9,140 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VosProduitsRouteImport } from './routes/vos-produits'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
-import { Route as AuthenticatedVosProduitsRouteImport } from './routes/_authenticated/vos-produits'
-import { Route as AuthenticatedRetraitRouteImport } from './routes/_authenticated/retrait'
-import { Route as AuthenticatedRechargerRouteImport } from './routes/_authenticated/recharger'
-import { Route as AuthenticatedPlansInvestissementRouteImport } from './routes/_authenticated/plans-investissement'
-import { Route as AuthenticatedMonCompteRouteImport } from './routes/_authenticated/mon-compte'
-import { Route as AuthenticatedEquipeRouteImport } from './routes/_authenticated/equipe'
-import { Route as AuthenticatedAccueilRouteImport } from './routes/_authenticated/accueil'
+import { Route as RetraitRouteImport } from './routes/retrait'
+import { Route as RechargerRouteImport } from './routes/recharger'
+import { Route as PlansInvestissementRouteImport } from './routes/plans-investissement'
+import { Route as MonCompteRouteImport } from './routes/mon-compte'
+import { Route as EquipeRouteImport } from './routes/equipe'
+import { Route as IndexRouteImport } from './routes/index'
 
+const VosProduitsRoute = VosProduitsRouteImport.update({
+  id: '/vos-produits',
+  path: '/vos-produits',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
-  id: '/_authenticated',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthenticatedVosProduitsRoute =
-  AuthenticatedVosProduitsRouteImport.update({
-    id: '/vos-produits',
-    path: '/vos-produits',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedRetraitRoute = AuthenticatedRetraitRouteImport.update({
+const RetraitRoute = RetraitRouteImport.update({
   id: '/retrait',
   path: '/retrait',
-  getParentRoute: () => AuthenticatedRouteRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedRechargerRoute = AuthenticatedRechargerRouteImport.update({
+const RechargerRoute = RechargerRouteImport.update({
   id: '/recharger',
   path: '/recharger',
-  getParentRoute: () => AuthenticatedRouteRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedPlansInvestissementRoute =
-  AuthenticatedPlansInvestissementRouteImport.update({
-    id: '/plans-investissement',
-    path: '/plans-investissement',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedMonCompteRoute = AuthenticatedMonCompteRouteImport.update({
+const PlansInvestissementRoute = PlansInvestissementRouteImport.update({
+  id: '/plans-investissement',
+  path: '/plans-investissement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MonCompteRoute = MonCompteRouteImport.update({
   id: '/mon-compte',
   path: '/mon-compte',
-  getParentRoute: () => AuthenticatedRouteRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedEquipeRoute = AuthenticatedEquipeRouteImport.update({
+const EquipeRoute = EquipeRouteImport.update({
   id: '/equipe',
   path: '/equipe',
-  getParentRoute: () => AuthenticatedRouteRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedAccueilRoute = AuthenticatedAccueilRouteImport.update({
-  id: '/accueil',
-  path: '/accueil',
-  getParentRoute: () => AuthenticatedRouteRoute,
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof AuthenticatedRouteRouteWithChildren
+  '/': typeof IndexRoute
+  '/equipe': typeof EquipeRoute
+  '/mon-compte': typeof MonCompteRoute
+  '/plans-investissement': typeof PlansInvestissementRoute
+  '/recharger': typeof RechargerRoute
+  '/retrait': typeof RetraitRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/accueil': typeof AuthenticatedAccueilRoute
-  '/equipe': typeof AuthenticatedEquipeRoute
-  '/mon-compte': typeof AuthenticatedMonCompteRoute
-  '/plans-investissement': typeof AuthenticatedPlansInvestissementRoute
-  '/recharger': typeof AuthenticatedRechargerRoute
-  '/retrait': typeof AuthenticatedRetraitRoute
-  '/vos-produits': typeof AuthenticatedVosProduitsRoute
+  '/vos-produits': typeof VosProduitsRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof AuthenticatedRouteRouteWithChildren
+  '/': typeof IndexRoute
+  '/equipe': typeof EquipeRoute
+  '/mon-compte': typeof MonCompteRoute
+  '/plans-investissement': typeof PlansInvestissementRoute
+  '/recharger': typeof RechargerRoute
+  '/retrait': typeof RetraitRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/accueil': typeof AuthenticatedAccueilRoute
-  '/equipe': typeof AuthenticatedEquipeRoute
-  '/mon-compte': typeof AuthenticatedMonCompteRoute
-  '/plans-investissement': typeof AuthenticatedPlansInvestissementRoute
-  '/recharger': typeof AuthenticatedRechargerRoute
-  '/retrait': typeof AuthenticatedRetraitRoute
-  '/vos-produits': typeof AuthenticatedVosProduitsRoute
+  '/vos-produits': typeof VosProduitsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/': typeof IndexRoute
+  '/equipe': typeof EquipeRoute
+  '/mon-compte': typeof MonCompteRoute
+  '/plans-investissement': typeof PlansInvestissementRoute
+  '/recharger': typeof RechargerRoute
+  '/retrait': typeof RetraitRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/_authenticated/accueil': typeof AuthenticatedAccueilRoute
-  '/_authenticated/equipe': typeof AuthenticatedEquipeRoute
-  '/_authenticated/mon-compte': typeof AuthenticatedMonCompteRoute
-  '/_authenticated/plans-investissement': typeof AuthenticatedPlansInvestissementRoute
-  '/_authenticated/recharger': typeof AuthenticatedRechargerRoute
-  '/_authenticated/retrait': typeof AuthenticatedRetraitRoute
-  '/_authenticated/vos-produits': typeof AuthenticatedVosProduitsRoute
+  '/vos-produits': typeof VosProduitsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/sitemap.xml'
-    | '/accueil'
     | '/equipe'
     | '/mon-compte'
     | '/plans-investissement'
     | '/recharger'
     | '/retrait'
+    | '/sitemap.xml'
     | '/vos-produits'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/sitemap.xml'
-    | '/accueil'
     | '/equipe'
     | '/mon-compte'
     | '/plans-investissement'
     | '/recharger'
     | '/retrait'
+    | '/sitemap.xml'
     | '/vos-produits'
   id:
     | '__root__'
-    | '/_authenticated'
+    | '/'
+    | '/equipe'
+    | '/mon-compte'
+    | '/plans-investissement'
+    | '/recharger'
+    | '/retrait'
     | '/sitemap.xml'
-    | '/_authenticated/accueil'
-    | '/_authenticated/equipe'
-    | '/_authenticated/mon-compte'
-    | '/_authenticated/plans-investissement'
-    | '/_authenticated/recharger'
-    | '/_authenticated/retrait'
-    | '/_authenticated/vos-produits'
+    | '/vos-produits'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  IndexRoute: typeof IndexRoute
+  EquipeRoute: typeof EquipeRoute
+  MonCompteRoute: typeof MonCompteRoute
+  PlansInvestissementRoute: typeof PlansInvestissementRoute
+  RechargerRoute: typeof RechargerRoute
+  RetraitRoute: typeof RetraitRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  VosProduitsRoute: typeof VosProduitsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vos-produits': {
+      id: '/vos-produits'
+      path: '/vos-produits'
+      fullPath: '/vos-produits'
+      preLoaderRoute: typeof VosProduitsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -150,91 +150,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_authenticated': {
-      id: '/_authenticated'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof AuthenticatedRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_authenticated/vos-produits': {
-      id: '/_authenticated/vos-produits'
-      path: '/vos-produits'
-      fullPath: '/vos-produits'
-      preLoaderRoute: typeof AuthenticatedVosProduitsRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/retrait': {
-      id: '/_authenticated/retrait'
+    '/retrait': {
+      id: '/retrait'
       path: '/retrait'
       fullPath: '/retrait'
-      preLoaderRoute: typeof AuthenticatedRetraitRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+      preLoaderRoute: typeof RetraitRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/recharger': {
-      id: '/_authenticated/recharger'
+    '/recharger': {
+      id: '/recharger'
       path: '/recharger'
       fullPath: '/recharger'
-      preLoaderRoute: typeof AuthenticatedRechargerRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+      preLoaderRoute: typeof RechargerRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/plans-investissement': {
-      id: '/_authenticated/plans-investissement'
+    '/plans-investissement': {
+      id: '/plans-investissement'
       path: '/plans-investissement'
       fullPath: '/plans-investissement'
-      preLoaderRoute: typeof AuthenticatedPlansInvestissementRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+      preLoaderRoute: typeof PlansInvestissementRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/mon-compte': {
-      id: '/_authenticated/mon-compte'
+    '/mon-compte': {
+      id: '/mon-compte'
       path: '/mon-compte'
       fullPath: '/mon-compte'
-      preLoaderRoute: typeof AuthenticatedMonCompteRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+      preLoaderRoute: typeof MonCompteRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/equipe': {
-      id: '/_authenticated/equipe'
+    '/equipe': {
+      id: '/equipe'
       path: '/equipe'
       fullPath: '/equipe'
-      preLoaderRoute: typeof AuthenticatedEquipeRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+      preLoaderRoute: typeof EquipeRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/accueil': {
-      id: '/_authenticated/accueil'
-      path: '/accueil'
-      fullPath: '/accueil'
-      preLoaderRoute: typeof AuthenticatedAccueilRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
 
-interface AuthenticatedRouteRouteChildren {
-  AuthenticatedAccueilRoute: typeof AuthenticatedAccueilRoute
-  AuthenticatedEquipeRoute: typeof AuthenticatedEquipeRoute
-  AuthenticatedMonCompteRoute: typeof AuthenticatedMonCompteRoute
-  AuthenticatedPlansInvestissementRoute: typeof AuthenticatedPlansInvestissementRoute
-  AuthenticatedRechargerRoute: typeof AuthenticatedRechargerRoute
-  AuthenticatedRetraitRoute: typeof AuthenticatedRetraitRoute
-  AuthenticatedVosProduitsRoute: typeof AuthenticatedVosProduitsRoute
-}
-
-const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
-  AuthenticatedAccueilRoute: AuthenticatedAccueilRoute,
-  AuthenticatedEquipeRoute: AuthenticatedEquipeRoute,
-  AuthenticatedMonCompteRoute: AuthenticatedMonCompteRoute,
-  AuthenticatedPlansInvestissementRoute: AuthenticatedPlansInvestissementRoute,
-  AuthenticatedRechargerRoute: AuthenticatedRechargerRoute,
-  AuthenticatedRetraitRoute: AuthenticatedRetraitRoute,
-  AuthenticatedVosProduitsRoute: AuthenticatedVosProduitsRoute,
-}
-
-const AuthenticatedRouteRouteWithChildren =
-  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
-  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  IndexRoute: IndexRoute,
+  EquipeRoute: EquipeRoute,
+  MonCompteRoute: MonCompteRoute,
+  PlansInvestissementRoute: PlansInvestissementRoute,
+  RechargerRoute: RechargerRoute,
+  RetraitRoute: RetraitRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  VosProduitsRoute: VosProduitsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

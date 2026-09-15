@@ -4,7 +4,7 @@ import { z } from "zod";
 import { toast } from "sonner";
 import { Copy, Phone, Hash, Wallet, CheckCircle2, ArrowLeft } from "lucide-react";
 
-export const Route = createFileRoute("/_authenticated/recharger")({
+export const Route = createFileRoute("/recharger")({
   component: RechargerPage,
   head: () => ({
     meta: [

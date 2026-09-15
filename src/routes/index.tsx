@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Shield, BarChart3, Wallet, Clock, Target, Coins, ArrowDownToLine, History, Headphones } from "lucide-react";
 import speakerHomeBackground from "../assets/speaker-home-background.png.asset.json";
 
-export const Route = createFileRoute("/_authenticated/accueil")({
+export const Route = createFileRoute("/")({
   component: HomePage,
   head: () => ({
     meta: [

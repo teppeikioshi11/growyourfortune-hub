@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Eye, EyeOff, Lock, Mail, ArrowRight, User, Shield, Phone, Gift } from "lucide-react";
 
-export const Route = createFileRoute("/_authenticated/mon-compte")({
+export const Route = createFileRoute("/mon-compte")({
   component: AccountPage,
   head: () => ({
     meta: [
