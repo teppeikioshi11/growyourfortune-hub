@@ -6,7 +6,7 @@ import speakerSilver from "../assets/speaker-silver.jpg.asset.json";
 import speakerGold from "../assets/speaker-gold.webp.asset.json";
 import speakerDiamond from "../assets/speaker-diamond.webp.asset.json";
 
-export const Route = createFileRoute("/plans-investissement")({
+export const Route = createFileRoute("/_authenticated/plans-investissement")({
   component: PlansPage,
   head: () => ({
     meta: [

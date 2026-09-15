@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, PieChart, Building2, Coins, Sprout, Briefcase, TrendingUp, ShieldCheck } from "lucide-react";
 
-export const Route = createFileRoute("/vos-produits")({
+export const Route = createFileRoute("/_authenticated/vos-produits")({
   component: ProductsPage,
   head: () => ({
     meta: [

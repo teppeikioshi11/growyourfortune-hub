@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Users, ChevronRight, Copy, Check, Share2, TrendingUp, Wallet } from "lucide-react";
 
-export const Route = createFileRoute("/equipe")({
+export const Route = createFileRoute("/_authenticated/equipe")({
   component: TeamPage,
   head: () => ({
     meta: [
