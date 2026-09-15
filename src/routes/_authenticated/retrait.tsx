@@ -14,7 +14,7 @@ import {
   ArrowLeft,
 } from "lucide-react";
 
-export const Route = createFileRoute("/retrait")({
+export const Route = createFileRoute("/_authenticated/retrait")({
   component: RetraitPage,
   head: () => ({
     meta: [
