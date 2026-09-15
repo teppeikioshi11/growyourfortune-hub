@@ -1,9 +1,14 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect } from "@tanstack/react-router";
 import { ArrowRight, Shield, BarChart3, Wallet, Clock, Target, Coins, ArrowDownToLine, History, Headphones } from "lucide-react";
 import speakerHomeBackground from "../assets/speaker-home-background.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
+  beforeLoad: () => {
+    if (typeof window !== "undefined" && !window.localStorage.getItem("speaker-invest-session")) {
+      throw redirect({ to: "/auth" });
+    }
+  },
   head: () => ({
     meta: [
       { title: "Speaker Invest — Investir dans les speakers" },
