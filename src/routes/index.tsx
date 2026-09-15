@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Shield, TrendingUp, BarChart3, Wallet, Clock, Target, Coins, ArrowDownToLine, History, Headphones } from "lucide-react";
-import heroBento from "../assets/hero-bento.jpg";
+import { ArrowRight, Shield, BarChart3, Wallet, Clock, Target, Coins, ArrowDownToLine, History, Headphones } from "lucide-react";
+import speakerHomeBackground from "../assets/speaker-home-background.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -22,9 +22,9 @@ function HomePage() {
     <div className="flex flex-col gap-16 px-4 py-12 sm:px-6 lg:px-8">
       {/* Hero Bento Grid */}
       <section className="mx-auto w-full max-w-7xl">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {/* Main hero card */}
-          <div className="glass-card glow-border relative col-span-1 row-span-2 flex min-h-[360px] flex-col justify-between overflow-hidden rounded-2xl p-6 md:col-span-2 md:row-span-2 md:p-8">
+          <div className="glass-card glow-border relative flex min-h-[480px] flex-col justify-between overflow-hidden rounded-2xl p-6 md:col-span-2 md:p-10">
             <div className="relative z-10 max-w-xl">
               <h1 className="font-display text-3xl font-bold leading-tight text-foreground md:text-4xl lg:text-5xl">
                 Investissez avec clarté,{" "}
@@ -50,33 +50,13 @@ function HomePage() {
               </Link>
             </div>
             <img
-              src={heroBento}
-              alt="Visualisation de croissance financière"
-              className="absolute inset-0 z-0 h-full w-full object-cover opacity-30"
+              src={speakerHomeBackground.url}
+              alt="Enceinte portable Speaker Invest dans un intérieur musical"
+              className="absolute inset-0 z-0 h-full w-full object-cover"
               width={1024}
-              height={768}
+              height={1024}
             />
-            <div className="absolute inset-0 z-[1] bg-gradient-to-t from-background via-background/70 to-transparent" />
-          </div>
-
-          {/* Stat card 1 */}
-          <div className="glass-card flex flex-col justify-center rounded-2xl p-6">
-            <div className="flex items-center gap-2 text-primary">
-              <TrendingUp className="h-5 w-5" />
-              <span className="text-xs font-semibold uppercase tracking-wider">Performance moyenne</span>
-            </div>
-            <p className="mt-3 font-display text-4xl font-bold text-foreground">+8,4 %</p>
-            <p className="mt-1 text-sm text-muted-foreground">annualisée sur 5 ans</p>
-          </div>
-
-          {/* Stat card 2 */}
-          <div className="glass-card flex flex-col justify-center rounded-2xl p-6">
-            <div className="flex items-center gap-2 text-primary">
-              <Shield className="h-5 w-5" />
-              <span className="text-xs font-semibold uppercase tracking-wider">Fonds sécurisés</span>
-            </div>
-            <p className="mt-3 font-display text-4xl font-bold text-foreground">98 %</p>
-            <p className="mt-1 text-sm text-muted-foreground">sous mandat de protection</p>
+            <div className="absolute inset-0 z-[1] bg-gradient-to-r from-background via-background/80 to-background/10" />
           </div>
 
           {/* Feature card — Time */}
