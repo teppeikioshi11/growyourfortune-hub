@@ -100,6 +100,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <div className="flex flex-col gap-16 px-4 py-12 sm:px-6 lg:px-8">
+      <ChannelPopup />
       {/* Hero Bento Grid */}
       <section className="mx-auto w-full max-w-7xl">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
