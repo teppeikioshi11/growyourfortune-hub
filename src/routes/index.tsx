@@ -10,13 +10,10 @@ function ChannelPopup() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (!window.sessionStorage.getItem("speaker-invest-channel-popup")) {
-      setOpen(true);
-    }
+    setOpen(true);
   }, []);
 
   const close = () => {
-    window.sessionStorage.setItem("speaker-invest-channel-popup", "1");
     setOpen(false);
   };
 
