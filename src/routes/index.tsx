@@ -12,7 +12,7 @@ function ChannelPopup() {
   useEffect(() => {
     if (!window.sessionStorage.getItem("speaker-invest-channel-popup")) {
       setOpen(true);
- django }
+    }
   }, []);
 
   const close = () => {
