@@ -63,6 +63,11 @@
   --color-glow: var(--glow);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
+  --color-account-page: var(--account-page);
+  --color-account-card: var(--account-card);
+  --color-account-primary: var(--account-primary);
+  --color-account-primary-foreground: var(--account-primary-foreground);
+  --color-account-soft: var(--account-soft);
 
   --font-display: var(--font-heading);
   --font-body: var(--font-body);
@@ -102,6 +107,15 @@
   --glow: oklch(0.511 0.230 276.97);
   --surface: oklch(0.167 0.025 286.4 / 60%);
   --surface-elevated: oklch(0.211 0.058 280.415 / 70%);
+
+  /* Account dashboard */
+  --account-page: oklch(0.975 0.012 82);
+  --account-card: oklch(1 0 0);
+  --account-primary: oklch(0.69 0.205 43);
+  --account-primary-foreground: oklch(0.99 0.004 80);
+  --account-soft: oklch(0.78 0.13 46 / 55%);
+  --account-banner: linear-gradient(135deg, oklch(0.75 0.19 55), oklch(0.66 0.23 35));
+  --account-shadow: 0 18px 45px -26px oklch(0.37 0.07 50 / 45%);
 
   --chart-1: oklch(0.511 0.230 276.97);
   --chart-2: oklch(0.277 0.105 277.099);
@@ -151,4 +165,13 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+@utility account-banner {
+  background: var(--account-banner);
+  box-shadow: var(--account-shadow);
+}
+
+@utility account-shadow {
+  box-shadow: var(--account-shadow);
 }
