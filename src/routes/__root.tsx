@@ -4,7 +4,6 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -140,17 +139,15 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const pathname = useRouterState({ select: (state) => state.location.pathname });
-  const hasStandaloneLayout = pathname === "/mon-compte";
 
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col bg-background">
-        {!hasStandaloneLayout && <Header />}
+        <Header />
         <main className="flex-1">
           <Outlet />
         </main>
-        {!hasStandaloneLayout && <Footer />}
+        <Footer />
       </div>
       <Toaster />
     </QueryClientProvider>
