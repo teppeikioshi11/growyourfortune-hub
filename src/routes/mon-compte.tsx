@@ -85,6 +85,7 @@ function AccountPage() {
           </div>
           <button
             type="button"
+            onClick={handleLogout}
             className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 px-4 py-2 text-sm font-medium transition-colors hover:bg-primary-foreground/25"
           >
             <LogOut className="h-4 w-4" />
