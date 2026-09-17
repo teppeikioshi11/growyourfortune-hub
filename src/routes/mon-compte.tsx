@@ -50,8 +50,27 @@ const rules = [
   "Cycle des packs : 90 jours",
 ];
 
+type StoredUser = { pseudo: string; phone: string; invite?: string };
+
+function getStoredUser(): StoredUser | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem("speaker-invest-user");
+    return raw ? (JSON.parse(raw) as StoredUser) : null;
+  } catch {
+    return null;
+  }
+}
+
+function getStoredProduct(): string | null {
+  if (typeof window === "undefined") return null;
+  return window.localStorage.getItem("speaker-invest-product");
+}
+
 function AccountPage() {
   const navigate = useNavigate();
+  const user = getStoredUser();
+  const product = getStoredProduct();
 
   const handleLogout = () => {
     localStorage.removeItem("speaker-invest-session");

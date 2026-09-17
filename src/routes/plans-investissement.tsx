@@ -1,5 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Check, ArrowRight } from "lucide-react";
+import { toast } from "sonner";
 import speakerStandard from "../assets/speaker-standard.webp.asset.json";
 import speakerPremium from "../assets/speaker-premium.webp.asset.json";
 import speakerSilver from "../assets/speaker-silver.jpg.asset.json";
