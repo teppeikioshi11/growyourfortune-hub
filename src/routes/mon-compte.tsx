@@ -1,199 +1,129 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { Eye, EyeOff, Lock, Mail, ArrowRight, User, Shield, Phone, Gift } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import {
+  ArrowDownToLine,
+  ArrowUpFromLine,
+  History,
+  Users,
+  Headphones,
+  Info,
+  LogOut,
+} from "lucide-react";
 
 export const Route = createFileRoute("/mon-compte")({
   component: AccountPage,
   head: () => ({
     meta: [
       { title: "Mon compte — Speaker Invest" },
-      { name: "description", content: "Connectez-vous à votre espace client Speaker Invest pour suivre vos investissements, consulter vos rapports et gérer votre profil." },
+      {
+        name: "description",
+        content:
+          "Votre espace Speaker Invest : solde du compte, revenus cumulés, recharge, retrait, historique et votre équipe.",
+      },
       { property: "og:title", content: "Mon compte — Speaker Invest" },
-      { property: "og:description", content: "Connectez-vous à votre espace client Speaker Invest pour suivre vos investissements, consulter vos rapports et gérer votre profil." },
-      { property: "og:url", content: "/mon-compte" },
+      {
+        property: "og:description",
+        content:
+          "Votre espace Speaker Invest : solde du compte, revenus cumulés, recharge, retrait, historique et votre équipe.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "robots", content: "noindex" },
     ],
     links: [{ rel: "canonical", href: "/mon-compte" }],
   }),
 });
 
+const services = [
+  { label: "Recharger", icon: ArrowDownToLine, to: "/recharger" as const },
+  { label: "Retirer", icon: ArrowUpFromLine, to: "/retrait" as const },
+  { label: "Historique", icon: History, to: "/mon-compte" as const },
+  { label: "Mon équipe", icon: Users, to: "/equipe" as const },
+];
+
+const rules = [
+  "Dépôt minimum : FCFA 3 000",
+  "Retrait minimum : FCFA 1 500 · frais de retrait 20%",
+  "Bonus d'inscription : FCFA 1 500",
+  "Pointage quotidien : FCFA 100",
+  "Revenu des packs : 25% par jour, crédité toutes les 24 heures",
+  "Cycle des packs : 90 jours",
+];
+
 function AccountPage() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [mode, setMode] = useState<"login" | "register">("login");
-
   return (
-    <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="grid gap-12 lg:grid-cols-2">
-        {/* Left content */}
-        <div className="flex flex-col justify-center">
-          <h1 className="font-display text-3xl font-bold text-foreground md:text-4xl">
-            Mon compte
-          </h1>
-          <p className="mt-4 text-muted-foreground">
-            Accédez à votre espace personnel pour suivre la performance de vos portefeuilles, télécharger vos rapports et échanger avec votre conseiller.
-          </p>
-          <ul className="mt-6 space-y-4">
-            <li className="flex items-start gap-3">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <Shield className="h-4 w-4" />
-              </div>
-              <div>
-                <h3 className="font-display text-sm font-semibold text-foreground">Sécurité renforcée</h3>
-                <p className="text-sm text-muted-foreground">Authentification forte et chiffrement de vos données personnelles.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <User className="h-4 w-4" />
-              </div>
-              <div>
-                <h3 className="font-display text-sm font-semibold text-foreground">Conseiller dédié</h3>
-                <p className="text-sm text-muted-foreground">Contactez votre gestionnaire directement depuis la messagerie sécurisée.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <Mail className="h-4 w-4" />
-              </div>
-              <div>
-                <h3 className="font-display text-sm font-semibold text-foreground">Rapports mensuels</h3>
-                <p className="text-sm text-muted-foreground">Recevez des analyses détaillées et des recommandations personnalisées.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        {/* Form card */}
-        <div className="glass-card glow-border rounded-2xl p-6 md:p-8">
-          <div className="flex gap-4 border-b border-border/50 pb-4">
-            <button
-              type="button"
-              onClick={() => setMode("login")}
-              className={`text-sm font-semibold transition-colors ${
-                mode === "login" ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Connexion
-            </button>
-            <button
-              type="button"
-              onClick={() => setMode("register")}
-              className={`text-sm font-semibold transition-colors ${
-                mode === "register" ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Créer un compte
-            </button>
-          </div>
-
-          <form
-            className="mt-6 space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Connexion simulée — l'intégration backend n'est pas configurée.");
-            }}
-          >
-            {mode === "register" && (
-              <div>
-                <label htmlFor="name" className="mb-1 block text-sm font-medium text-foreground">
-                  Nom complet
-                </label>
-                <div className="relative">
-                  <User className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="Jean Dupont"
-                    className="w-full rounded-md border border-input bg-background/50 py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                  />
-                </div>
-              </div>
-            )}
-
-            <div>
-              <label htmlFor="phone" className="mb-1 block text-sm font-medium text-foreground">
-                Numéro de téléphone
-              </label>
-              <div className="flex gap-2">
-                <div className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-input bg-background/50 px-3 text-sm font-medium text-foreground">
-                  <Phone className="h-4 w-4 text-muted-foreground" />
-                  +228
-                </div>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  inputMode="tel"
-                  pattern="[0-9\s]{8,}"
-                  placeholder="90 00 00 00"
-                  className="w-full rounded-md border border-input bg-background/50 py-2.5 px-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                />
-              </div>
-            </div>
-
-
-            <div>
-              <label htmlFor="password" className="mb-1 block text-sm font-medium text-foreground">
-                Mot de passe
-              </label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                <input
-                  id="password"
-                  name="password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder="••••••••"
-                  className="w-full rounded-md border border-input bg-background/50 py-2.5 pl-10 pr-10 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
-                  aria-label={showPassword ? "Masquer le mot de passe" : "Afficher le mot de passe"}
-                >
-                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                </button>
-              </div>
-            </div>
-
-            {mode === "register" && (
-              <div>
-                <label htmlFor="invite" className="mb-1 block text-sm font-medium text-foreground">
-                  Code d'invitation <span className="text-muted-foreground font-normal">(optionnel)</span>
-                </label>
-                <div className="relative">
-                  <Gift className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                  <input
-                    id="invite"
-                    name="invite"
-                    type="text"
-                    autoComplete="off"
-                    placeholder="Code du parrain"
-                    className="w-full rounded-md border border-input bg-background/50 py-2.5 pl-10 pr-4 text-sm uppercase tracking-wider text-foreground placeholder:text-muted-foreground placeholder:normal-case placeholder:tracking-normal focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                  />
-                </div>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Saisissez le code du parrain qui vous a invité pour bénéficier d'avantages exclusifs.
-                </p>
-              </div>
-            )}
-
-
-            <button
-              type="submit"
-              className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              {mode === "login" ? "Se connecter" : "Créer mon compte"}
-              <ArrowRight className="h-4 w-4" />
-            </button>
-          </form>
-
-          <p className="mt-4 text-center text-xs text-muted-foreground">
-            En continuant, vous acceptez nos conditions d'utilisation et notre politique de confidentialité.
-          </p>
-        </div>
+    <div className="mx-auto w-full max-w-2xl px-4 py-6 sm:px-6">
+      {/* Top bar */}
+      <div className="mb-5 flex items-center justify-between">
+        <h1 className="font-display text-xl font-bold text-foreground">Mon compte</h1>
+        <button
+          type="button"
+          className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          <Headphones className="h-4 w-4" />
+          Service client
+        </button>
       </div>
+
+      {/* Profile card */}
+      <section className="rounded-2xl bg-gradient-to-br from-primary to-primary/70 p-5 text-primary-foreground shadow-lg">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h2 className="font-display text-2xl font-bold">Karlsen</h2>
+            <p className="mt-1 text-sm text-primary-foreground/80">22872427790</p>
+            <span className="mt-3 inline-flex rounded-full bg-primary-foreground/15 px-3 py-1 text-xs font-semibold">
+              VIP 2
+            </span>
+          </div>
+          <button
+            type="button"
+            className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 px-4 py-2 text-sm font-medium transition-colors hover:bg-primary-foreground/25"
+          >
+            <LogOut className="h-4 w-4" />
+            Quitter
+          </button>
+        </div>
+
+        <div className="mt-5 grid grid-cols-2 gap-3">
+          <div className="rounded-xl bg-primary-foreground/15 p-4">
+            <p className="text-xs text-primary-foreground/80">Solde du compte</p>
+            <p className="mt-1 font-display text-xl font-bold">FCFA 0</p>
+          </div>
+          <div className="rounded-xl bg-primary-foreground/15 p-4">
+            <p className="text-xs text-primary-foreground/80">Revenus cumulés</p>
+            <p className="mt-1 font-display text-xl font-bold">FCFA 100</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="glass-card mt-4 rounded-2xl p-5">
+        <h2 className="font-display text-lg font-semibold text-foreground">Mes services</h2>
+        <div className="mt-4 grid grid-cols-4 gap-3">
+          {services.map(({ label, icon: Icon, to }) => (
+            <Link key={label} to={to} className="flex flex-col items-center gap-2 text-center">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform hover:scale-105">
+                <Icon className="h-6 w-6" />
+              </span>
+              <span className="text-xs font-medium text-foreground">{label}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Rules */}
+      <section className="glass-card mt-4 rounded-2xl p-5">
+        <h2 className="flex items-center gap-2 font-display text-lg font-semibold text-foreground">
+          <Info className="h-5 w-5 text-primary" />
+          Réglementation
+        </h2>
+        <ul className="mt-3 space-y-2">
+          {rules.map((rule) => (
+            <li key={rule} className="text-sm text-muted-foreground">
+              {rule}
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }
