@@ -51,6 +51,14 @@ const rules = [
 ];
 
 function AccountPage() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("speaker-invest-session");
+    toast.success("Vous êtes déconnecté.");
+    navigate({ to: "/auth" });
+  };
+
   return (
     <div className="mx-auto w-full max-w-2xl px-4 py-6 sm:px-6">
       {/* Top bar */}
