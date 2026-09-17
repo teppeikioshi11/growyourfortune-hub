@@ -96,10 +96,10 @@ function AccountPage() {
       <section className="rounded-2xl bg-gradient-to-br from-primary to-primary/70 p-5 text-primary-foreground shadow-lg">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h2 className="font-display text-2xl font-bold">Karlsen</h2>
-            <p className="mt-1 text-sm text-primary-foreground/80">22872427790</p>
+            <h2 className="font-display text-2xl font-bold">{user?.pseudo ?? "Invité"}</h2>
+            <p className="mt-1 text-sm text-primary-foreground/80">{user?.phone ?? "—"}</p>
             <span className="mt-3 inline-flex rounded-full bg-primary-foreground/15 px-3 py-1 text-xs font-semibold">
-              VIP 2
+              {product ?? "Aucun produit"}
             </span>
           </div>
           <button

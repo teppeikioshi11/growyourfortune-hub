@@ -81,6 +81,14 @@ const plans = [
 
 
 function PlansPage() {
+  const navigate = useNavigate();
+
+  function choosePlan(name: string) {
+    window.localStorage.setItem("speaker-invest-product", name);
+    toast.success(`${name} sélectionné`);
+    navigate({ to: "/mon-compte" });
+  }
+
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-12 text-center">
