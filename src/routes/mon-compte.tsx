@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { toast } from "sonner";
 import {
   ArrowDownToLine,
   ArrowUpFromLine,
@@ -50,6 +51,14 @@ const rules = [
 ];
 
 function AccountPage() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("speaker-invest-session");
+    toast.success("Vous êtes déconnecté.");
+    navigate({ to: "/auth" });
+  };
+
   return (
     <div className="mx-auto w-full max-w-2xl px-4 py-6 sm:px-6">
       {/* Top bar */}
@@ -76,6 +85,7 @@ function AccountPage() {
           </div>
           <button
             type="button"
+            onClick={handleLogout}
             className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 px-4 py-2 text-sm font-medium transition-colors hover:bg-primary-foreground/25"
           >
             <LogOut className="h-4 w-4" />
