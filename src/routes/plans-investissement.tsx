@@ -147,8 +147,9 @@ function PlansPage() {
                   </li>
                 ))}
               </ul>
-              <Link
-                to="/mon-compte"
+              <button
+                type="button"
+                onClick={() => choosePlan(plan.name)}
                 className={`mt-6 inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold transition-colors ${
                   plan.featured
                     ? "bg-primary text-primary-foreground hover:bg-primary/90"
@@ -157,7 +158,7 @@ function PlansPage() {
               >
                 {plan.cta}
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </button>
             </div>
           </div>
         ))}
