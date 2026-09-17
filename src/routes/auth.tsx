@@ -56,8 +56,22 @@ function AuthPage() {
       toast.error("Les deux mots de passe ne correspondent pas.");
       return;
     }
+    if (mode === "register" && pseudo.trim().length < 2) {
+      toast.error("Veuillez saisir votre pseudo.");
+      return;
+    }
     if (typeof window !== "undefined") {
       window.localStorage.setItem("speaker-invest-session", "1");
+      if (mode === "register") {
+        window.localStorage.setItem(
+          "speaker-invest-user",
+          JSON.stringify({
+            pseudo: pseudo.trim(),
+            phone: `${country.replace("+", "")}${phone.replace(/\s/g, "")}`,
+            invite: invite.trim(),
+          }),
+        );
+      }
     }
     toast.success(mode === "register" ? "Inscription réussie" : "Connexion réussie");
     navigate({ to: "/" });
