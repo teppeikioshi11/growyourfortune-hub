@@ -1,5 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Check, ArrowRight } from "lucide-react";
+import { toast } from "sonner";
 import speakerStandard from "../assets/speaker-standard.webp.asset.json";
 import speakerPremium from "../assets/speaker-premium.webp.asset.json";
 import speakerSilver from "../assets/speaker-silver.jpg.asset.json";
@@ -80,6 +81,14 @@ const plans = [
 
 
 function PlansPage() {
+  const navigate = useNavigate();
+
+  function choosePlan(name: string) {
+    window.localStorage.setItem("speaker-invest-product", name);
+    toast.success(`${name} sélectionné`);
+    navigate({ to: "/mon-compte" });
+  }
+
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-12 text-center">
@@ -138,8 +147,9 @@ function PlansPage() {
                   </li>
                 ))}
               </ul>
-              <Link
-                to="/mon-compte"
+              <button
+                type="button"
+                onClick={() => choosePlan(plan.name)}
                 className={`mt-6 inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold transition-colors ${
                   plan.featured
                     ? "bg-primary text-primary-foreground hover:bg-primary/90"
@@ -148,7 +158,7 @@ function PlansPage() {
               >
                 {plan.cta}
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </button>
             </div>
           </div>
         ))}
